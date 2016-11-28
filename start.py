@@ -52,7 +52,7 @@ class garoon:
         headers = {"Content-Type": "application/x-www-form-urlencoded"}
         username = config.get('garoon', 'user')
         password = config.get('garoon', 'password')
-        grn_api_url = config.get('garoon', 'url')
+        grn_api_url = config.get('garoon', 'api_url')
         return requests.post(grn_api_url,
                              data=body % (username, password, (datetime.datetime.now() - datetime.timedelta(days=7)).isoformat(), (datetime.datetime.now() + datetime.timedelta(days=day)).isoformat()),
                              headers=headers).text
